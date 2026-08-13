@@ -1,0 +1,183 @@
+// 1. Variables de color y fuentes
+$color-dark: #131921;
+$color-text: #0f1111;
+$color-bg: #f3f3f3;
+$color-white: #ffffff;
+$color-primary: #ffd814;
+$color-primary-hover: #f7ca00;
+$color-prime-blue: #00a8e1;
+$font-main: Arial, sans-serif;
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+
+// 2. Estilos Globales
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-main;
+  background-color: $color-bg;
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+// Header actualizado con soporte para el Logo SVG
+header {
+  background-color: $color-dark;
+  color: $color-white;
+  padding: 15px 20px;
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; // Separación exacta entre el logo de Amazon y la palabra 'prime'
+
+    .amazon-logo {
+      width: 100px;
+      height: auto;
+      display: block;
+    }
+
+    .prime-text {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: $color-prime-blue; // El característico color azul cielo de Prime
+      position: relative;
+      top: -2px; // Ajuste visual fino de alineación
+    }
+  }
+}
+
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('https://unsplash.com');
+  background-size: cover;
+  background-position: center;
+  color: $color-white;
+  text-align: center;
+  padding: 60px 20px;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 80px 20px;
+    h1 { font-size: 2.5rem; }
+    p { font-size: 1.3rem; }
+  }
+}
+
+.btn {
+  background-color: $color-primary;
+  color: $color-text;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+  &:hover {
+    background-color: $color-primary-hover;
+    transform: translateY(-2px); // Efecto sutil de elevación en el botón
+  }
+  
+  &:active {
+    transform: translateY(0); // Efecto al hacer click físico
+  }
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+
+  .card {
+    background: $color-white;
+    padding: 30px 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      color: $color-prime-blue;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    h3 {
+      color: $color-dark;
+      margin: 10px 0;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+      .card-icon {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px 20px;
+
+    .card {
+      margin: 15px;
+      width: 250px;
+    }
+  }
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: $color-dark;
+  color: $color-white;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.8rem;
+
+  @media (min-width: $breakpoint-mobile) {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 30px 40px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

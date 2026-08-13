@@ -1,0 +1,162 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #0f1111;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+header {
+  background-color: #131921;
+  color: #ffffff;
+  padding: 15px 20px;
+}
+header .logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+header .logo-container .amazon-logo {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+header .logo-container .prime-text {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #00a8e1;
+  position: relative;
+  top: -2px;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://unsplash.com");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+}
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.1rem;
+}
+@media (min-width: 768px) {
+  .hero {
+    padding: 80px 20px;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.3rem;
+  }
+}
+
+.btn {
+  background-color: #ffd814;
+  color: #0f1111;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn:hover {
+  background-color: #f7ca00;
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+.features .card {
+  background: #ffffff;
+  padding: 30px 20px;
+  margin: 10px 0;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.features .card .card-icon {
+  width: 40px;
+  height: 40px;
+  color: #00a8e1;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.features .card h3 {
+  color: #131921;
+  margin: 10px 0;
+}
+.features .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+.features .card:hover .card-icon {
+  transform: scale(1.1);
+}
+@media (min-width: 768px) {
+  .features {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px 20px;
+  }
+  .features .card {
+    margin: 15px;
+    width: 250px;
+  }
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: #131921;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.8rem;
+}
+@media (min-width: 480px) {
+  footer {
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 768px) {
+  footer {
+    padding: 30px 40px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}/*# sourceMappingURL=styles.css.map */
