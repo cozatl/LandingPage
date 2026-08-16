@@ -8,14 +8,15 @@
     <meta name="keywords" content="tienda, ofertas, peliculas, musica, video"> <!-- Palabras relevantes y relacionadas al contenido actualizadas (5 a 10 palabras) -->
 
     <!-- Open Graph (used for social networks) -->
-    <meta property="og:title" content="Landing Page Amazon Prime">
+    <meta property="og:title" content="Ejemplo Landing Page Amazon Prime">
     <meta property="og:description" content="Disfruta de diversas opciones para ver peliculas, series, compras y música con una sola suscripcion. Explora las diferentes opciones que tenemos para ti">
     <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAABECAYAAAD9978gAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB90lEQVR4nO2WwY3CMBBFnyZQA9m0gZpADXAnSAdwAsmUQCZ0gXQCdJB0gHThkhwclpSId7wZ28bZIKHIsmSvfzP+v8f2Wv/Z62X9AfgAn4C9b0pI/oYvYI/X47W6nSAsgC6wB67AAs8FjOOfwDoY8XN9f4G0wGtgA7g2uGdgE4zl9Zf7b6TfAh8t9S+C50OwdR6L8Ym2bU6uMfcG7g1j3f3N6SdgNfE9rL6XfgbWEXw7Eftvph8D/8b3C+bYvX6Of0C6fW/f19fOfe9F996M9gY8w50tA3y/2Z7zQf3P3UfA7+N+z91rwO48w7Z9wK1b5pS7E/PZAtOOfw98gLz2zHPPfM0y70f8vGOfS8913LPeA9+Wv97O3wV8An89b3K+3nC+6rntU597vFvK/gXw6HmsY8Z7Ndw9x/tN3G863nvK637A17Z7O9wKWAZ94OXYGvAL/J7HwF/8rI9wGWAZ/6V3wD3+T9gM8Ar8g79Y6yFpAnPZ8gBv7gLPhU/SBOZ6760XU7wFrq69Fv0O+wVfsH8F1tDfkF8N9wGvbe+U9CewNfG9F90VpAn8mvdK7vveC+6K0gbepvVK7wXpAmu9N0XvBfAmsDfw96rfpAn8NfF7F90FpAnMbemV3gvSBv4M/gM8wL1AmsDcll5pZ5Z67/gff9OAn3C/9X/rP6UJuC8=3wA">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Landing Page Amazon Prime</title> <!-- Menos de 60 caracteres -->
+    <title>Ejemplo Landing Page Amazon Prime</title> <!-- Menos de 60 caracteres -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script> -->
+    <script type="module" src="./js/chatbot.js" defer></script>
 </head>
 <body>
-
     <header>
         <article class="logo-container">
             <!-- Contenedor del nombre "amazon" con la flecha oficial debajo -->
@@ -82,8 +83,27 @@
                 <p>Millones de canciones y listas de reproducción sin anuncios.</p>
             </article>
         </section>
+        <!-- Contenedor principal del chatbot -->
+        <article class="chat-container" id="chat-container" aria-label="chatbot contenedor principal">
+            <!-- Cabecera con botón de minimizar -->
+            <div class="chat-header" id="chat-header">
+                <h3>Asistente Virtual</h3>
+                <button id="toggle-btn" class="toggle-btn">−</button>
+            </div>
+            
+            <!-- Cuerpo de mensajes -->
+            <div class="chat-messages" id="chat-messages" aria-label="mensajes para asistente virtual">
+                <div class="message bot">¡Hola! Soy tu asistente virtual. Pregúntame algo.</div>
+            </div>
+            
+            <!-- Input y botón de envío -->
+            <div class="chat-footer" id="chat-footer" aria-label="area de mensajes">
+                <input type="text" id="user-input" aria-label="escribir mensaje a chatbot" placeholder="Escribe un mensaje..." autocomplete="off">
+                <button id="send-btn" aria-label="enviar mensaje a chatbot">Enviar</button>
+            </div>
+        </article>
     </main>
-
+    
     <footer>
         <p>&copy; 2026 Amazon. Todos los derechos reservados. (Ejemplo educativo sin fin de lucro)</p>
         <div style="display: flex; gap: 15px; justify-content: center;">
@@ -91,6 +111,5 @@
             <a href="#" style="color: #ccc; text-decoration: none;">Privacidad</a>
         </div>
     </footer>
-
 </body>
 </html>

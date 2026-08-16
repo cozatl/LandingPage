@@ -1,4 +1,7 @@
+@use "sass:color";
+
 // 1. Variables de color y fuentes
+$primary-color: #466777;
 $color-dark: #131921;
 $color-text: #0f1111;
 $color-bg: #f3f3f3;
@@ -7,6 +10,9 @@ $color-primary: #ffd814;
 $color-primary-hover: #f7ca00;
 $color-prime-blue: #00a8e1;
 $font-main: Arial, sans-serif;
+$border-color: #e2e8f0;
+$bg-light: #f8fafc;
+$text-dark: #1e293b;
 
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
@@ -158,6 +164,133 @@ header {
       width: 250px;
     }
   }
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    background-color: $color-white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid $border-color;
+    
+    // Transición suave al minimizar
+    transition: height 0.3s ease, border-radius 0.3s ease; 
+
+    // ¡NUEVO! Clase que se activa al minimizar
+    &.minimized {
+        height: 55px; // Altura aproximada de la cabecera
+        
+        .chat-messages, .chat-footer {
+            display: none; // Esconde el contenido inferior
+        }
+    }
+
+    .chat-header {
+        background-color: $primary-color;
+        color: $color-white;
+        padding: 16px;
+        display: flex; // Alinea título y botón en línea
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer; // Indica que se puede hacer clic para minimizar
+        
+        h3 {
+            margin: 0;
+            font-size: 1.15rem;
+        }
+
+        // ¡NUEVO! Estilos del botón de minimizar
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: $color-white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0 5px;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .chat-messages {
+        flex: 1;
+        padding: 16px;
+        overflow-y: auto;
+        background-color: $bg-light;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .message {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            white-space: pre-line;
+
+            &.user {
+                background-color: $primary-color;
+                color: $color-white;
+                align-self: flex-end;
+                border-bottom-right-radius: 2px;
+            }
+
+            &.bot {
+                background-color: $color-white;
+                color: $text-dark;
+                align-self: flex-start;
+                border-bottom-left-radius: 2px;
+                border: 1px solid $border-color;
+            }
+        }
+    }
+
+    .chat-footer {
+        display: flex;
+        padding: 12px;
+        background-color: $color-white;
+        border-top: 1px solid $border-color;
+        gap: 8px;
+
+        input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid $border-color;
+            border-radius: 8px;
+            outline: none;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+
+            &:focus {
+                border-color: $primary-color;
+            }
+        }
+
+        button {
+            background-color: $primary-color;
+            color: $color-white;
+            border: none;
+            padding: 0 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: color.adjust($primary-color, $lightness: -10%);
+            }
+        }
+    }
 }
 
 footer {
